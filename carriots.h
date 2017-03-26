@@ -30,7 +30,7 @@ String messageBody(String attributeName, String value, int type){
     default:
       body += value;
   }
-  body += "}}";
+  body += "}}\r\n";
   return body;
 }
 /*
@@ -105,7 +105,7 @@ void sendStream(String attributeName, double value){
   String header = request(json);
   Serial.print(header);
   Serial.print("\r\n");
-  Serial.println(json); 
+  Serial.println(json);
   httpSend(header,json);
 }
 

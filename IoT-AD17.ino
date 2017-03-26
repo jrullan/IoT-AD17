@@ -66,11 +66,10 @@ void loop() {
    */
   if(digitalRead(BUTTON)==HIGH && !debouncer.waiting()){
     debouncer.start();    
-    Serial.println("button pressed");
     sendStream("button",false);
-    sendStream("switch",2);
-    sendStream("name","Jose");
-    sendStream("level",50.5);
+    //sendStream("switch",2);
+    //sendStream("name","Jose");
+    //sendStream("level",50.5);
   }
 
   /*
@@ -78,7 +77,7 @@ void loop() {
    */
   if(debouncer.done()){
     debouncer.stop();
-    Serial.println("debouncer timer reset");
+    //Serial.println("debouncer timer reset");
   }
 
   // Read all the lines of the reply from server and print them to Serial
